@@ -2,12 +2,12 @@
 The dataset consists of 90 000 color videos that show a planar robot manipulator executing articulated manipulation tasks. More precisely, the manipulator grasps a circular object of random color and size and places it on top of a square object/platform of again random color and size.
 The initial conﬁgurations (location, size and color) of the objects were randomly sampled during generation. Different from other datasets such as the moving MNIST dataset, the samples comprise a goal-oriented task as described, making it more suitable for testing prediction capabilities of an ML model.For instance, one can use it as a toy dataset to investigate the capacity and output behavior of a deep neural network before testing it on real-world data. We have done this for a deep auto-encoder network:
 
-![Square](/examples/orig1.gif)
-![Circle](/examples/orig2.gif)
-![Triangle](/examples/orig3.gif)  
-![Square](/examples/gen1.gif)
-![Circle](/examples/gen2.gif)
-![Triangle](/examples/gen3.gif)
+![Example 1](/examples/orig1.gif)
+![Example 2](/examples/orig2.gif)
+![Example 1](/examples/orig3.gif)  
+![Example 1 generated](/examples/gen1.gif)
+![Example 2 generated](/examples/gen2.gif)
+![Example 3 generated](/examples/gen3.gif)
 
 # Download
 Automatically download the data by using the included scripts:
