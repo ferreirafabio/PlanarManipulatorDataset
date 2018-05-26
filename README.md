@@ -9,6 +9,8 @@ The initial conﬁgurations (location, size and color) of the objects were rando
 ![Example 2 generated](/examples/gen2.gif)
 ![Example 3 generated](/examples/gen3.gif)
 
+To accesss a similar dataset see ![Simulated Flying Shapes Dataset](https://github.com/ferreirafabio/FlyingShapesDataset)
+
 # Download
 Automatically download the data by using the included scripts:
 - ```python download_videos.py``` (.tar files ~1.3GB, uncompressed ~23GB) or 
