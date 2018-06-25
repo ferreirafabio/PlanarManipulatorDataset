@@ -1,4 +1,4 @@
-# Planar (Robot) Manipulator Dataset
+# Planar Manipulator Dataset
 The dataset consists of 90 000 color videos that show a planar robot manipulator executing articulated manipulation tasks. More precisely, the manipulator grasps a circular object of random color and size and places it on top of a square object/platform of again random color and size.
 The initial conﬁgurations (location, size and color) of the objects were randomly sampled during generation. Different from other datasets such as the moving MNIST dataset, the samples comprise a goal-oriented task as described, making it more suitable for testing prediction capabilities of an ML model.For instance, one can use it as a toy dataset to investigate the capacity and output behavior of a deep neural network before testing it on real-world data. We have done this for a deep auto-encoder network:
 
@@ -33,7 +33,6 @@ If you use the dataset in your research, you should cite it as follows:
     howpublished = {\url{https://github.com/ferreirafabio/PlanarManipulatorDataset}},
 }
 ```
-## TODO
 # Specifications
 We provide both the videos as .avi files as well as TensorFlow tfrecord files. The samples in the tfrecord files contain 10 frames of the original video which were taken equally distributed over the entire playtime. Here are some more details:
 ## Dataset as avi
