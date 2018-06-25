@@ -39,31 +39,14 @@ We provide both the videos as .avi files as well as TensorFlow tfrecord files. T
 ## Dataset as avi
 - video resolution: 128x128
 - fps: 30
-- color depth: 24bpp (3 channels, grayscale)
+- color depth: 24bpp (3 channels, RGB)
 - video codec: ffmjpeg
 - compression format: mjpeg, color encoding: yuvj420p
-- the samples follow the naming: 
-  ```
-  id_shape_startLocation_endLocation_motionDirection_euclideanDistance
-  ```
-  where:
-    - ```id``` is a unique identifier
-    - ```startLocation``` starting position of the object, e.g. righttop
-    - ```endLocation``` destination position of the object, e.g. leftbottom
-    - ```motionDirection``` e.g. left
-    - ```euclideanDistance``` Euclidean distance between the two objects, e.g. 7.765617 
 
 ## Dataset as tfrecord
-The tfrecord files store both the video itself and meta information from the file name (start location, eucl. distance etc.).
-- the video data is stored in a ```feature``` dict (which is serialized as ```tf.train.Example```) which stores the following keys 
-    - feature[path] #('blob' + '/' + str(imageCount)
+The tfrecord files have been created with the pip package ```video2tfrecord``` and each file contains 1000 videos. Due to the high computational cost of processing all original video frames in deep neural networks, we decided to reduce the number of extracted frames for the tfrecord files. As a result, every single tfrecord file entry consists of 10 RGB frames which were taken equally distributed over the video playtime. Assuming no prior knowledge about the video and its inherent scene dynamics, choosing frames equally spaced maximizes the chances of capturing most of the spatio-temporal dynamics. The video data is stored in a ```feature``` dict which is serialized as tf.train.Example and contains the following keys:
+    - feature[path] ('blob' + '/' + str(imageCount)
     - feature['height']
     - feature['width']
     - feature['depth']
     - feature['id']
-- additional information is stored in a ```meta_dict``` (which is also serialized within the feature dict via the key 'metadata')
-    - meta_dict['shape']
-    - meta_dict['start_location']
-    - meta_dict['end_location']
-    - meta_dict['motion_location']
-    - meta_dict['eucl_distance']
