@@ -45,9 +45,8 @@ We provide both the videos as .avi files as well as TensorFlow tfrecord files. T
 
 ## Dataset as tfrecord
 The tfrecord files have been created with the pip package ```video2tfrecord``` and each file contains 1000 videos. Due to the high computational cost of processing all original video frames in deep neural networks, we decided to reduce the number of extracted frames for the tfrecord files. As a result, every single tfrecord file entry consists of 10 RGB frames which were taken equally distributed over the video playtime. Assuming no prior knowledge about the video and its inherent scene dynamics, choosing frames equally spaced maximizes the chances of capturing most of the spatio-temporal dynamics. The video data is stored in a ```feature``` dict which is serialized as tf.train.Example and contains the following keys:
-
-    - feature[path] ('blob' + '/' + str(imageCount)
-    - feature['height']
-    - feature['width']
-    - feature['depth']
-    - feature['id']
+- feature[path] ('blob' + '/' + str(imageCount)
+- feature['height']
+- feature['width']
+- feature['depth']
+- feature['id']
