@@ -1,9 +1,9 @@
 import requests
 
-tfrecords_shared_links = "planarmanipulator_tfrecords.txt"
+videos_shared_links = "planarmanipulator_videos.txt"
 
 
-with open(tfrecords_shared_links, 'r') as link_file:
+with open(videos_shared_links, 'r') as link_file:
   url_list = link_file.read().splitlines()
 
   for i, link in enumerate(url_list):
