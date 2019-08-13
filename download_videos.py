@@ -1,13 +1,13 @@
 import requests
 
-tfrecords_shared_links = "planarmanipulator_videos.txt"
+video_shared_links = "planarmanipulator_videos.txt"
 
 
-with open(tfrecords_shared_links, 'r') as link_file:
+with open(video_shared_links, 'r') as link_file:
   url_list = link_file.read().splitlines()
 
   for i, link in enumerate(url_list):
-    file_name = "tfrecords_" + str(i+1) + ".zip"
+    file_name = "video.tar.gz." + str(i)
     r = requests.get(link, stream=True)
     print("Downloading", file_name)
     with open(file_name, 'wb') as f:
